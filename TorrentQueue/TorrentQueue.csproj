@@ -81,7 +81,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\TorrentList.cs" />
+    <Compile Include="Models\ITorrentRepository.cs" />
+    <Compile Include="Models\Session.cs" />
+    <Compile Include="Models\Torrent.cs" />
+    <Compile Include="Models\TorrentRepository.cs" />
+    <Compile Include="Models\Torrents.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -95,6 +99,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Library\Library.csproj">
+      <Project>{552bb4e7-0a1d-43a5-bfd8-c89f464849a9}</Project>
+      <Name>Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

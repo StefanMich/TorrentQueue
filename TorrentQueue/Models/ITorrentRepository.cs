@@ -8,8 +8,10 @@ namespace TorrentQueue.Models
 {
     interface ITorrentRepository
     {
-        IEnumerable<Torrent> GetAll();
+        Torrents GetAll();
         Torrent Add(Torrent t);
-        bool Update();
+        Torrent PopNext();
+        bool StackEmpty();
+        int Count();
     }
 }

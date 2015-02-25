@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using TorrentQueue.Library;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace TorrentQueue.Models
+namespace Client
 {
     public class Torrent
     {
-        public string link { get; set; }
+        public string Link { get; set; }
 
         public Torrent()
         {
@@ -17,10 +17,7 @@ namespace TorrentQueue.Models
 
         public Torrent(string link)
         {
-            this.link = link;
+            Link = link;
         }
-
-       
-
     }
 }
