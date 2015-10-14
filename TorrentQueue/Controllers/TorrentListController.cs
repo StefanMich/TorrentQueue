@@ -20,7 +20,7 @@ namespace TorrentQueue.Controllers
 
         public HttpResponseMessage PostTorrent(Torrent t)
         {
-            if (t.link == null)
+            if (t == null)
                 throw new HttpResponseException(HttpStatusCode.Conflict);
             repository.Add(t);
 

@@ -1,15 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorrentQueue", "TorrentQueue\TorrentQueue.csproj", "{A06204D0-A82A-413E-BDC4-10CA1B6755B3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorrentQueue.Tests", "TorrentQueue.Tests\TorrentQueue.Tests.csproj", "{F6805AF8-FD75-44CD-B88A-324A3C12E231}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library", "Library\Library.csproj", "{552BB4E7-0A1D-43A5-BFD8-C89F464849A9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{04B2B38C-2D89-47B6-B1A3-D6A705895C12}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +21,6 @@ Global
 		{F6805AF8-FD75-44CD-B88A-324A3C12E231}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6805AF8-FD75-44CD-B88A-324A3C12E231}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6805AF8-FD75-44CD-B88A-324A3C12E231}.Release|Any CPU.Build.0 = Release|Any CPU
-		{552BB4E7-0A1D-43A5-BFD8-C89F464849A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{552BB4E7-0A1D-43A5-BFD8-C89F464849A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{552BB4E7-0A1D-43A5-BFD8-C89F464849A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{552BB4E7-0A1D-43A5-BFD8-C89F464849A9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{04B2B38C-2D89-47B6-B1A3-D6A705895C12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04B2B38C-2D89-47B6-B1A3-D6A705895C12}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04B2B38C-2D89-47B6-B1A3-D6A705895C12}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04B2B38C-2D89-47B6-B1A3-D6A705895C12}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

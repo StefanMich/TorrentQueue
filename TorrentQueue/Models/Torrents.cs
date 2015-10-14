@@ -13,7 +13,7 @@ namespace TorrentQueue.Models
         {
             torrentStack = new Stack<Torrent>();
 
-            torrentStack.Push(new Torrent("http://www.torlock.com/tor/3736191.torrent"));
+            //torrentStack.Push(new Torrent("http://www.torlock.com/tor/3736191.torrent"));
         }
         public int count
         {
