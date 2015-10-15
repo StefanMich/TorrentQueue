@@ -8,7 +8,7 @@ using TorrentQueue.Models;
 
 namespace TorrentQueue.Controllers
 {
-    [RoutePrefix("torrentqueue")]
+    [RoutePrefix("torrents")]
     public class TorrentQueueController : ApiController
     {
         private static string FilePath = HttpContext.Current.Server.MapPath("~/App_Data/list.txt");
