@@ -31,5 +31,26 @@ namespace TorrentQueue.Controllers
             else
                 return Ok(new { link = link });
         }
+
+        [HttpDelete, Route("top")]
+        public IHttpActionResult DeleteTop()
+        {
+            if (!File.Exists(FilePath))
+                return NotFound();
+
+            bool any;
+            lock (accessObj)
+            {
+                string[] lines = File.ReadAllLines(FilePath);
+                any = lines.Length > 0;
+                if (any)
+                    File.WriteAllLines(FilePath, lines.Skip(1));
+            }
+
+            if (any)
+                return Ok();
+            else
+                return NotFound();
+        }
     }
 }
