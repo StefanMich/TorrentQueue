@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using TorrentQueue.Models;
 
 namespace TorrentQueue.Controllers
 {
@@ -51,6 +52,28 @@ namespace TorrentQueue.Controllers
                 return Ok();
             else
                 return NotFound();
+        }
+
+        [HttpPost, Route("bottom")]
+        public IHttpActionResult PostBottom([FromBody]NewTorrent torrent)
+        {
+            if (torrent == null)
+                return BadRequest();
+
+            lock (accessObj)
+            {
+                string[] newData = new string[] { torrent.link };
+
+                if (!File.Exists(FilePath))
+                    File.WriteAllLines(FilePath, newData);
+                else
+                {
+                    string[] lines = File.ReadAllLines(FilePath);
+                    File.WriteAllLines(FilePath, lines.Concat(newData));
+                }
+            }
+
+            return Ok();
         }
     }
 }
