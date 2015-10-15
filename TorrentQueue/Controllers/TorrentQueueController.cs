@@ -14,6 +14,19 @@ namespace TorrentQueue.Controllers
         private static string FilePath = HttpContext.Current.Server.MapPath("~/App_Data/list.txt");
         private static object accessObj = new object();
 
+        [HttpGet, Route("")]
+        public IHttpActionResult GetAll()
+        {
+            if (!File.Exists(FilePath))
+                return Ok(new object[0]);
+
+            string[] links;
+            lock (accessObj)
+                links = File.ReadAllLines(FilePath);
+
+            return Ok(links.Select(x => new { link = x }));
+        }
+
         [HttpGet, Route("top")]
         public IHttpActionResult GetTop()
         {
