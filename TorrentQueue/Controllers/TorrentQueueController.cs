@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using TorrentQueue.Models;
@@ -14,11 +14,20 @@ namespace TorrentQueue.Controllers
         private static string FilePath = HttpContext.Current.Server.MapPath("~/App_Data/list.txt");
         private static object accessObj = new object();
 
+        private IHttpActionResult NoContent()
+        {
+            return ResponseMessage(Request.CreateResponse(HttpStatusCode.NoContent));
+        }
+        private IHttpActionResult NoContent<T>(T value)
+        {
+            return ResponseMessage(Request.CreateResponse(HttpStatusCode.NoContent, value));
+        }
+
         [HttpGet, Route("")]
         public IHttpActionResult GetAll()
         {
             if (!File.Exists(FilePath))
-                return Ok(new object[0]);
+                return NoContent(new object[0]);
 
             string[] links;
             lock (accessObj)
@@ -31,7 +40,7 @@ namespace TorrentQueue.Controllers
         public IHttpActionResult GetTop()
         {
             if (!File.Exists(FilePath))
-                return NotFound();
+                return NoContent(new { });
 
             string link;
             lock (accessObj)
@@ -41,7 +50,7 @@ namespace TorrentQueue.Controllers
             }
 
             if (link == null)
-                return NotFound();
+                return NoContent(new { });
             else
                 return Ok(new { link = link });
         }
@@ -50,7 +59,7 @@ namespace TorrentQueue.Controllers
         public IHttpActionResult DeleteTop()
         {
             if (!File.Exists(FilePath))
-                return NotFound();
+                return NoContent();
 
             bool any;
             lock (accessObj)
@@ -64,7 +73,7 @@ namespace TorrentQueue.Controllers
             if (any)
                 return Ok();
             else
-                return NotFound();
+                return NoContent();
         }
 
         [HttpPost, Route("bottom")]
