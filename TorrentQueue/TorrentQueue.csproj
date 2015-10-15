@@ -84,6 +84,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ITorrentRepository.cs" />
+    <Compile Include="Models\NewTorrent.cs" />
     <Compile Include="Models\Torrent.cs" />
     <Compile Include="Models\TorrentRepository.cs" />
     <Compile Include="Models\Torrents.cs" />
