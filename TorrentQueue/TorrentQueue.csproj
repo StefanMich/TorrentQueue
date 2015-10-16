@@ -78,14 +78,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\TorrentListController.cs" />
+    <Compile Include="Controllers\TorrentQueueController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\ITorrentRepository.cs" />
-    <Compile Include="Models\Torrent.cs" />
-    <Compile Include="Models\TorrentRepository.cs" />
-    <Compile Include="Models\Torrents.cs" />
+    <Compile Include="Models\NewTorrent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
